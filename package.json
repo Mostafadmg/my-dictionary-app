@@ -1,0 +1,27 @@
+{
+  "name": "dictionaryapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npx concurrently \"npx sass dictionary-app/sass/main.scss dictionary-app/css/styles.css --watch\" \"npx live-server dictionary-app\"",
+    "sass:build": "npx sass dictionary-app/sass/main.scss dictionary-app/css/styles.css",
+    "sass:watch": "npx sass dictionary-app/sass/main.scss dictionary-app/css/styles.css --watch",
+    "build": "npm run sass:build && powershell -NoProfile -Command \"Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue; New-Item -ItemType Directory -Force dist | Out-Null; Copy-Item -Recurse -Force dictionary-app\\* dist\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mostafadmg/my-dictionary-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mostafadmg/my-dictionary-app/issues"
+  },
+  "homepage": "https://github.com/Mostafadmg/my-dictionary-app#readme",
+  "devDependencies": {
+    "lit": "^3.3.2"
+  }
+}

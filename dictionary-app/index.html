@@ -1,13 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dictionary App</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <div id="app"></div>
-    <script src="js/main.js"></script>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Inter:wght@400;700&family=Lora:wght@400;700;700i&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="header">
+        <!-- 1st -->
+        <img src="./assets/images/logo.svg" alt="" class="header__logo" />
+
+        <div class="header__rightContainer">
+          <div class="header__fontSelector">
+            <div class="header__fontContent">
+              <span class="header__fontStyle text-mono-bold-small leading-relaxed"
+                >Mono</span
+              >
+              <img
+                src="./assets/images/icon-arrow-down.svg"
+                alt=""
+                class="header__dropdownIcon"
+              />
+            </div>
+          </div>
+          <!-- 3rd -->
+          <div class="header__themeSelector">
+            <div class="header__toggleContainer">
+              <label for="toggle" class="header__toggle">
+                <input type="checkbox" id="toggle" class="header__input" />
+                <span class="header__toggleSlider"></span>
+              </label>
+            </div>
+            <img
+              src="./assets/images/icon-moon.svg
+          "
+              alt="dark-theme"
+            />
+          </div>
+        </div>
+        <!-- 2nd -->
+      </header>
+
+      <main>
+        <div id="results"></div>
+      </main>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>

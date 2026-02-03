@@ -1,0 +1,94 @@
+@use "variables" as v;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__rightContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: v.$spacing-200;
+  }
+
+  &__themeSelector {
+    display: flex;
+    flex-direction: row;
+    gap: v.$spacing-100;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__fontContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: v.$spacing-100;
+    padding-right: v.$spacing-300;
+    border-right: 1px solid v.$neutral-200;
+  }
+
+  &__input {
+    opacity: 1;
+    height: 0;
+    width: 0;
+
+    &:checked + .header__toggleSlider {
+      background-color: v.$purple-600;
+    }
+
+    &:checked + .header__toggleSlider::before {
+      transform: translateX(1.3rem) translateY(-50%);
+    }
+  }
+
+  &__logo {
+    width: 1.75rem;
+    height: 1.96875rem;
+  }
+
+  &__dropdownIcon {
+    width: 0.75rem;
+    height: 0.375rem;
+  }
+
+  &__toggleSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background: #fff;
+    transition: 0.4s;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+
+    &::before {
+      width: 0.875rem;
+      height: 0.875rem;
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      background-color: #fff;
+      left: 1.2px;
+      bottom: 0;
+      box-shadow: 0 2px 5px #999999;
+      transition: all 0.4s;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    width: 2.5rem;
+    height: 1.25rem;
+    display: inline-block;
+    border-radius: 30px;
+  }
+}

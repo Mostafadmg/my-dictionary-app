@@ -1,0 +1,101 @@
+$font-families: (
+  "sans": (
+    "Inter",
+    sans-serif,
+  ),
+  "serif": (
+    "Lora",
+    serif,
+  ),
+  "mono": (
+    "Inconsolata",
+    monospace,
+  ),
+);
+
+$font-weights: (
+  "regular": 400,
+  "bold": 700,
+);
+
+$font-sizes: (
+  "small": 16px,
+  "medium": 20px,
+  "large": 24px,
+  "xlarge": 32px,
+  "xxlarge": 64px,
+);
+
+// dictionary-app/sass/_variables.scss
+$line-heights: (
+  "tight": 1.2,
+  "normal": 1.5,
+  "relaxed": 1.8,
+);
+
+@each $family-name, $family-value in $font-families {
+  @each $weight-name, $weight-value in $font-weights {
+    @each $size-name, $size-value in $font-sizes {
+      .text-#{$family-name}-#{$weight-name}-#{$size-name} {
+        font-family:
+          #{nth($family-value, 1)},
+          #{nth($family-value, 2)};
+        font-weight: $weight-value;
+        font-size: $size-value;
+      }
+    }
+  }
+}
+
+// Generate line height classes
+@each $lh-name, $lh-value in $line-heights {
+  .leading-#{$lh-name} {
+    line-height: $lh-value;
+  }
+}
+/*
+  GENERATED CLASSES - TOTAL: 18 classes
+  (3 fonts × 2 weights × 3 sizes = 18)
+
+  CLASS NAME PATTERN: .text-{font}-{weight}-{size}
+
+  SANS SERIF FONT CLASSES (Inter):
+  ================================
+  .text-sans-regular-small    → Inter, sans-serif | 400 | 16px
+  .text-sans-regular-medium   → Inter, sans-serif | 400 | 20px
+  .text-sans-regular-large    → Inter, sans-serif | 400 | 24px
+  .text-sans-bold-small       → Inter, sans-serif | 700 | 16px
+  .text-sans-bold-medium      → Inter, sans-serif | 700 | 20px
+  .text-sans-bold-large       → Inter, sans-serif | 700 | 24px
+
+  SERIF FONT CLASSES (Lora):
+  ===========================
+  .text-serif-regular-small   → Lora, serif | 400 | 16px
+  .text-serif-regular-medium  → Lora, serif | 400 | 20px
+  .text-serif-regular-large   → Lora, serif | 400 | 24px
+  .text-serif-bold-small      → Lora, serif | 700 | 16px
+  .text-serif-bold-medium     → Lora, serif | 700 | 20px
+  .text-serif-bold-large      → Lora, serif | 700 | 24px
+
+  MONOSPACE FONT CLASSES (Inconsolata):
+  ======================================
+  .text-mono-regular-small    → Inconsolata, monospace | 400 | 16px
+  .text-mono-regular-medium   → Inconsolata, monospace | 400 | 20px
+  .text-mono-regular-large    → Inconsolata, monospace | 400 | 24px
+  .text-mono-bold-small       → Inconsolata, monospace | 700 | 16px
+  .text-mono-bold-medium      → Inconsolata, monospace | 700 | 20px
+  .text-mono-bold-large       → Inconsolata, monospace | 700 | 24px
+
+  USAGE IN HTML:
+  ==============
+  <h1 class="text-serif-bold-large">The quick brown fox</h1>
+  <p class="text-sans-regular-medium">jumps over the lazy dog.</p>
+  <code class="text-mono-regular-small">console.log('hello');</code>
+
+  BENEFITS:
+  =========
+  - Consistent naming: Easy to predict class names
+  - Maintainable: Change values in variables, all classes update
+  - Scalable: Add new font/weight/size, new classes auto-generate
+  - DRY: 15 lines of Sass generates 18 complete CSS classes
+*/
