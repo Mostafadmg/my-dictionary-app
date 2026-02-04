@@ -11,7 +11,8 @@ body {
 }
 
 .app {
-  padding: 1.5rem;
+  padding-inline: 1.5rem;
+  padding-block: 3rem;
 }
 
 img {
@@ -35,9 +36,18 @@ img {
 .header__themeSelector {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 16px;
   justify-content: center;
   align-items: center;
+}
+.header__themeSelector:hover {
+  cursor: pointer;
+}
+.header__themeSelector:hover .header__themeIcon {
+  color: #a445ed;
+}
+.header__themeSelector:hover .header__toggleSlider {
+  background-color: #a445ed;
 }
 .header__fontContent {
   display: flex;
@@ -86,7 +96,7 @@ img {
   content: "";
   border-radius: 50%;
   background-color: #fff;
-  left: 1.2px;
+  left: 2px;
   bottom: 0;
   box-shadow: 0 2px 5px #999999;
   transition: all 0.4s;
@@ -99,6 +109,13 @@ img {
   height: 1.25rem;
   display: inline-block;
   border-radius: 30px;
+}
+.header__themeIcon {
+  width: 22px;
+  height: 22px;
+  color: #838383;
+  transition: color 0.2s ease;
+  transform: translateY(-1px);
 }
 
 .text-sans-regular-small {
