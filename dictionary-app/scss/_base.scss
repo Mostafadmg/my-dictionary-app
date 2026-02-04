@@ -1,0 +1,32 @@
+@use "variables" as v;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: v.$font-sans;
+  background: v.$color-bg;
+  color: v.$color-text;
+}
+
+.app {
+  padding-inline: 1.5rem;
+  padding-block: 3rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.font-sans {
+  font-family: Inter, sans-serif;
+}
+.font-serif {
+  font-family: Lora, serif;
+}
+.font-mono {
+  font-family: Inconsolata, monospace;
+}

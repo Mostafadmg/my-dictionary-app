@@ -19,17 +19,28 @@
         <img src="./assets/images/logo.svg" alt="" class="header__logo" />
 
         <div class="header__rightContainer">
-          <div class="header__fontSelector">
-            <div class="header__fontContent">
-              <span class="header__fontStyle text-mono-bold-small leading-relaxed"
-                >Mono</span
-              >
+          <div class="header__fontSelector" data-open="false">
+            <button
+              class="header__fontTrigger text-mono-bold-small"
+              id="fontTrigger"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              <span id="fontLabel">Sans Serif</span>
               <img
                 src="./assets/images/icon-arrow-down.svg"
                 alt=""
                 class="header__dropdownIcon"
               />
-            </div>
+            </button>
+            <ul class="header__fontMenu" id="fontMenu" role="listbox">
+              <li class="header__fontOption" role="option" data-font="sans">
+                Sans Serif
+              </li>
+              <li class="header__fontOption" role="option" data-font="serif">Serif</li>
+              <li class="header__fontOption" role="option" data-font="mono">Mono</li>
+            </ul>
           </div>
           <!-- 3rd -->
           <div class="header__themeSelector">
