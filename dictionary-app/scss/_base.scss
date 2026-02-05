@@ -13,7 +13,7 @@ body {
 
 .app {
   padding-inline: 1.5rem;
-  padding-block: 3rem;
+  padding-block: 1.5rem;
 }
 
 img {
@@ -29,4 +29,8 @@ img {
 }
 .font-mono {
   font-family: Inconsolata, monospace;
+}
+
+main {
+  width: 100%;
 }
