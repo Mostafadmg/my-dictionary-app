@@ -24,4 +24,6 @@ function handleFontSelect(font) {
   fontMenu.setAttribute("hidden", "");
 }
 
+function synonymSearchHandler() {}
+
 export { handleTheme, handleFontSelect };

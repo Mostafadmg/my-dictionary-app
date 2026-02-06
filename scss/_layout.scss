@@ -1,0 +1,478 @@
+@use "variables" as v;
+@use "utilities" as m;
+
+// ===========================
+// WORD SECTION
+// ===========================
+// ===========================
+.pronounciationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.word {
+  font-family: "Lora";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 106%;
+  color: v.$neutral-800;
+  margin: 0;
+
+  @include m.tablet {
+    font-size: 4rem;
+  }
+}
+
+.pronounciation {
+  font-family: "Lora";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133%;
+  color: v.$purple-500;
+  margin-top: 0.5rem;
+}
+
+.playBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+
+  &:hover {
+    scale: 1.05;
+  }
+
+  &:active {
+    scale: 0.98;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ===========================
+// PART OF SPEECH SECTION
+// ===========================
+.meaningContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: v.$spacing-200;
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.meaningTitle {
+  font-family: "Lora";
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 133%;
+  color: v.$neutral-800;
+  white-space: nowrap;
+  margin: 0;
+
+  @include m.tablet {
+    font-size: 1.5rem;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 0.0625rem;
+  background-color: v.$neutral-200;
+}
+
+// ===========================
+// MEANING SECTION
+// ===========================
+.meaningHeading {
+  color: v.$neutral-500;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.meaning-li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+
+  p {
+    margin: 0;
+    color: v.$neutral-800;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    padding-top: 0.35rem;
+
+    @include m.tablet {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.dot {
+  padding-top: 0.35rem;
+  flex-shrink: 0;
+
+  svg {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+// ===========================
+// EXAMPLE SECTION
+// ===========================
+.exampleText {
+  color: v.$neutral-500;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin-top: 0.8rem;
+  padding-left: 1.75rem;
+}
+
+// ===========================
+// SYNONYMS SECTION
+// ===========================
+.synonymsContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.synonymsLabel {
+  color: v.$neutral-500;
+  font-size: 1rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.synonymsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.synonymLink {
+  color: v.$purple-500;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: v.$purple-600;
+    text-decoration: underline;
+  }
+}
+
+// ===========================
+// SOURCE SECTION
+// ===========================
+.sourceContainer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid v.$neutral-200;
+}
+
+.sourceLabel {
+  color: v.$neutral-500;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.sourceLink {
+  color: v.$neutral-800;
+  font-size: 0.875rem;
+  word-break: break-all;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    color: v.$purple-500;
+  }
+}
+
+// ===========================
+// RESPONSIVE DESIGN
+// ===========================
+@media (min-width: 768px) {
+  .word {
+    font-size: 4rem;
+  }
+
+  .pronounciation {
+    font-size: 1.5rem;
+  }
+
+  .meaningTitle {
+    font-size: 1.5rem;
+  }
+
+  .playBtn {
+    width: 3rem;
+    height: 3rem;
+
+    @include m.tablet {
+      width: 4.675rem;
+      height: 4.675rem;
+    }
+  }
+}
+
+// ===========================
+// UTILITY CLASSES
+// ===========================
+.font-sans {
+  font-family: Inter, sans-serif;
+
+  body {
+    font-family: Inter, sans-serif;
+  }
+}
+
+.font-serif {
+  font-family: Lora, serif;
+
+  body {
+    font-family: Lora, serif;
+  }
+}
+
+.font-mono {
+  font-family: Inconsolata, monospace;
+
+  body {
+    font-family: Inconsolata, monospace;
+  }
+}
+
+h1 {
+  padding-block: 1.5rem;
+}
+
+.empty-state {
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit; // ← ADD THIS!
+}
+
+.emptyStateIconBox {
+  background-color: v.$neutral-900;
+  border-radius: 999px;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyState-icon {
+  height: 3rem;
+  width: 3rem;
+}
+
+.emptyState-text {
+  color: hsl(0 0% 64% / 1);
+  text-align: center;
+  padding-inline: 3rem;
+  font-family: inherit; // ← ADD THIS!
+}
+
+.emptyState-title {
+  margin: 0;
+  padding-bottom: 0;
+  color: v.$neutral-500;
+  font-family: inherit; // ← ADD THIS!
+}
+
+.emptyState-icon {
+  stroke: v.$neutral-500;
+}
+
+// ===========================
+// ERROR STATE
+// ===========================
+.error-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 2rem;
+  padding-top: 6rem;
+  text-align: center;
+  font-family: inherit; // ← ADD THIS!
+
+  .errorState-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: v.$neutral-800;
+    margin: 1rem 0 0.5rem 0;
+    font-family: inherit; // ← ADD THIS!
+  }
+
+  .errorState-word {
+    color: v.$neutral-700;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-family: inherit; // ← ADD THIS!
+
+    strong {
+      color: v.$red-500;
+      font-weight: 700;
+      font-family: inherit; // ← ADD THIS!
+    }
+  }
+
+  .errorState-text {
+    color: v.$neutral-500;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    padding-inline: 3rem;
+    margin-top: 0.5rem;
+    font-family: inherit; // ← ADD THIS!
+  }
+}
+
+.errorStateIconBox {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: v.$neutral-100; // Light gray background
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorState-icon {
+  color: v.$neutral-500; // Medium gray icon (matches text)
+  width: 3rem;
+  height: 3rem;
+}
+
+// ===========================
+// SYNONYMS SECTION
+// ===========================
+.synonyms-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.synonyms-label {
+  color: v.$neutral-500;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.synonyms-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.synonym-link {
+  color: v.$purple-500;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+}
+
+// ===========================
+// SOURCE SECTION
+// ===========================
+.source-container {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.source-divider {
+  width: 100%;
+  height: 1px;
+  background-color: v.$neutral-200;
+  margin-bottom: 1.5rem;
+}
+
+.source-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  @include m.tablet {
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+  }
+}
+
+.source-label {
+  color: v.$neutral-500;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.source-link {
+  color: #fff;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s;
+
+  svg {
+    color: #fff;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// ===========================
+// DEFINITION EXAMPLE
+// ===========================
+.definition-example {
+  color: #757575;
+  font-size: 1rem;
+  font-style: normal;
+  margin-top: 1rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}

@@ -1,32 +1,18 @@
 {
-  "name": "dictionaryapp",
+  "name": "dictionary-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A professional dictionary web application",
   "scripts": {
-    "watch": "concurrently \"sass dictionary-app/scss/main.scss dictionary-app/css/styles.css --watch\" \"live-server dictionary-app\"",
-    "sass:build": "sass dictionary-app/scss/main.scss dictionary-app/css/styles.css",
-    "sass:watch": "npm run watch",
-    "build": "npm run sass:build && powershell -NoProfile -Command \"Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue; New-Item -ItemType Directory -Force dist | Out-Null; Copy-Item -Recurse -Force dictionary-app\\* dist\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass scss/main.scss css/styles.css",
+    "sass:watch": "sass --watch scss/main.scss css/styles.css",
+    "dev": "concurrently \"npm run sass:watch\" \"live-server --port=5500\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mostafadmg/my-dictionary-app.git"
-  },
-  "keywords": [],
+  "keywords": ["dictionary", "vanilla-js"],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mostafadmg/my-dictionary-app/issues"
-  },
-  "homepage": "https://github.com/Mostafadmg/my-dictionary-app#readme",
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "lit": "^3.3.2",
-    "live-server": "^1.2.2",
-    "prettier": "^3.8.1",
-    "prettier-html": "^0.0.2",
-    "sass": "^1.85.1"
+    "sass": "^1.69.5",
+    "concurrently": "^8.2.2",
+    "live-server": "^1.2.2"
   }
 }

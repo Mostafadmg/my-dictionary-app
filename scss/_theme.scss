@@ -1,0 +1,164 @@
+@use "variables" as v;
+
+.light {
+  body {
+    background-color: v.$neutral-0;
+    color: v.$neutral-900;
+  }
+
+  .header {
+    background-color: v.$neutral-0;
+  }
+
+  .header__fontSelector {
+    border-right-color: v.$neutral-200;
+  }
+
+  .header__fontMenu {
+    background-color: v.$neutral-0;
+    color: v.$neutral-900;
+  }
+
+  .header__fontOption:hover {
+    background-color: v.$neutral-100;
+  }
+
+  .header__toggleSlider {
+    background-color: v.$neutral-500;
+    border-color: v.$neutral-200;
+  }
+
+  .header__toggleSlider::before {
+    background-color: v.$neutral-0;
+  }
+
+  .header__themeIcon {
+    color: v.$neutral-500;
+  }
+
+  .emptyState-title {
+    color: rgba(0, 0, 0, 0.573);
+  }
+
+  .emptyStateIconBox {
+    background-color: v.$neutral-100;
+  }
+}
+
+.dark {
+  body {
+    background-color: v.$neutral-950;
+    color: v.$neutral-0;
+  }
+
+  .header {
+    background-color: v.$neutral-950;
+  }
+
+  .header__fontSelector {
+    border-right-color: v.$neutral-700;
+  }
+
+  .header__fontMenu {
+    background-color: v.$neutral-900;
+    color: v.$neutral-0;
+  }
+
+  .header__fontOption:hover {
+    background-color: v.$neutral-800;
+  }
+
+  .header__toggleSlider {
+    background-color: v.$neutral-700;
+    border-color: v.$neutral-700;
+  }
+
+  .header__toggleSlider::before {
+    background-color: v.$neutral-0;
+  }
+
+  .header__themeIcon {
+    color: v.$purple-500;
+  }
+
+  .meaning-li p {
+    color: v.$neutral-0;
+  }
+
+  .meaningTitle {
+    color: v.$neutral-0;
+  }
+
+  .word {
+    color: v.$neutral-0;
+  }
+
+  .line {
+    background-color: v.$neutral-700;
+  }
+
+  .search-form,
+  .search-form input {
+    background-color: v.$neutral-900;
+    color: v.$neutral-0;
+  }
+
+  .errorStateIconBox {
+    background-color: v.$neutral-800;
+  }
+
+  .errorState-icon {
+    color: v.$neutral-500; // Medium gray (same as text)
+  }
+
+  .errorState-title {
+    color: v.$neutral-0;
+  }
+
+  .errorState-word {
+    color: v.$neutral-200;
+  }
+
+  .definition-example {
+    color: v.$neutral-500;
+  }
+
+  .sourceLink {
+    color: v.$neutral-0;
+  }
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 2rem;
+  gap: 1rem;
+
+  p {
+    color: v.$neutral-500;
+    font-size: 1rem;
+  }
+}
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid v.$neutral-200;
+  border-top-color: v.$purple-500;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.definition-example {
+  color: v.$neutral-500;
+}
